@@ -1,0 +1,116 @@
+/*-----------------RESPONSIVE*/
+
+$mob: 425px;
+$tablet: 768px;
+$laptop-small: 1024px;
+$laptop: 1440px;
+
+
+@mixin respond-to($media) {
+  @if $media == mob {
+    @media only screen and (max-width: $mob) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $mob + 1) and (max-width: $tablet) { @content; }
+  }
+  @else if $media == laptop-screens {
+    @media only screen and (min-width: $laptop-small - 1) and (max-width: $laptop + 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $laptop) { @content; }
+  }
+}
+
+/*-----------------USERS*/
+
+.Users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+
+    @include respond-to(mob){
+        width: 95%;
+    }
+    @include respond-to(medium-screens){
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.User {
+    width: 22%;
+    background: white;
+    margin-top: 2%;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+    padding-bottom: 1%;
+
+    @include respond-to(mob){
+        width: 45%;
+        padding-bottom: 2%;
+        margin-top: 4%;
+    }
+    @include respond-to(medium-screens){
+        width: 31%;
+        padding-bottom: 2%;
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.User p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    margin: 2% 0%;
+}
+
+.User:hover {
+    -webkit-box-shadow: 0px 6px 10px -1px #0000001e; 
+    box-shadow: 0px 6px 10px -1px #0000001e;
+}
+
+.User > div {
+    text-align: center;
+}
+
+.User h4 {
+    margin: 5% 0%;
+}
+
+.User img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+    @include respond-to(mob){
+
+    }
+    @include respond-to(medium-screens){
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+
+

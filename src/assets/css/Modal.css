@@ -1,0 +1,37 @@
+/*-----------------RESPONSIVE*/
+/*-----------------MODAL*/
+.Backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 1920px;
+  height: 1080px;
+  z-index: 5;
+  position: fixed;
+}
+
+.Modal {
+  background-color: white;
+  height: 130px;
+  width: 400px;
+  position: fixed;
+  left: 38%;
+  top: 20%;
+  z-index: 9;
+  padding: 1%;
+}
+
+.Modal p {
+  padding: 4% 0%;
+}
+
+.Modal button {
+  padding: 2% 5%;
+  background-color: #30363d;
+  border: 1px solid #30363d;
+  color: white;
+  cursor: pointer;
+}
+
+.Modal button:hover {
+  background-color: #4d565f;
+}
+/*# sourceMappingURL=Modal.css.map */

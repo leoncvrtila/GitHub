@@ -1,0 +1,81 @@
+/*-----------------RESPONSIVE*/
+
+$mob: 425px;
+$tablet: 768px;
+$laptop-small: 1024px;
+$laptop: 1440px;
+
+
+@mixin respond-to($media) {
+  @if $media == mob {
+    @media only screen and (max-width: $mob) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $mob + 1) and (max-width: $tablet) { @content; }
+  }
+  @else if $media == laptop-screens {
+    @media only screen and (min-width: $laptop-small - 1) and (max-width: $laptop + 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $laptop) { @content; }
+  }
+}
+
+/*-----------------LAYOUT*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f6f6fd;
+}
+
+main {
+    padding: 2%;
+}
+
+/*-----------------------SCROLL*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  @include respond-to(mob) { 
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+}
+@include respond-to(medium-screens) { 
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;   
+
+}
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dfdfdf;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1e1e2d;
+  @include respond-to(mob) { 
+    border-radius: 100px;
+    background:  #8e8e8e;
+}
+@include respond-to(medium-screens) { 
+  background:  #8e8e8e;  
+
+}
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3c3c58;
+}

@@ -1,0 +1,146 @@
+/*-----------------RESPONSIVE*/
+
+$mob: 425px;
+$tablet: 768px;
+$laptop-small: 1024px;
+$laptop: 1440px;
+
+
+@mixin respond-to($media) {
+  @if $media == mob {
+    @media only screen and (max-width: $mob) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $mob + 1) and (max-width: $tablet) { @content; }
+  }
+  @else if $media == laptop-screens {
+    @media only screen and (min-width: $laptop-small - 1) and (max-width: $laptop + 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $laptop) { @content; }
+  }
+}
+
+/*-----------------REPOS*/
+
+.Repos {
+    width: 80%;
+    margin: auto;
+
+    @include respond-to(mob){
+        width: 95%;
+    }
+    @include respond-to(medium-screens){
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.Repos > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+
+    @include respond-to(mob){
+        padding: 2%;
+    }
+    @include respond-to(medium-screens){
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.Repo {
+    width: 20%;
+    padding: 1.5%;
+    background: white;
+    margin-top: 2%;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+
+    @include respond-to(mob){
+        width: 100%;
+        margin-top: 5%;
+        padding: 4%;
+    }
+    @include respond-to(medium-screens){
+        width: 42%;
+        padding: 2%;
+    }
+    @include respond-to(laptop-screens){
+        width: 28%;
+        padding: 2%;
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.Repo h2 {
+    @include respond-to(mob){
+        font-size: 19px;
+    }
+    @include respond-to(medium-screens){
+        font-size: 20px;
+    }
+    @include respond-to(laptop-screens){
+        font-size: 20px;
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.Repo p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.Repo:hover {
+    -webkit-box-shadow: 0px 6px 10px -1px #0000001e; 
+    box-shadow: 0px 6px 10px -1px #0000001e;
+}
+
+.Repo p {
+    margin-top: 3%;
+}
+
+.BackBtn {
+    padding: 1% 2%;
+    background-color: #30363d;
+    border: 1px solid #30363d;
+    color: white;
+    cursor: pointer;
+
+    @include respond-to(mob){
+        padding: 2% 5%;
+        margin-left: 2%;
+    }
+    @include respond-to(medium-screens){
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
+
+.BackBtn:hover {
+    background-color: #4d565f;
+}

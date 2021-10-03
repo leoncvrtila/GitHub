@@ -1,0 +1,56 @@
+/*-----------------RESPONSIVE*/
+
+$mob: 425px;
+$tablet: 768px;
+$laptop-small: 1024px;
+$laptop: 1440px;
+
+
+@mixin respond-to($media) {
+  @if $media == mob {
+    @media only screen and (max-width: $mob) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $mob + 1) and (max-width: $tablet) { @content; }
+  }
+  @else if $media == laptop-screens {
+    @media only screen and (min-width: $laptop-small - 1) and (max-width: $laptop + 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $laptop) { @content; }
+  }
+}
+
+/*-----------------INPUT*/
+
+.Search {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    padding: 0.5% 0.7%;
+    outline: none;
+    border: 0px;
+    border-bottom: 1px solid grey;
+    width: 20%;
+    background: white;
+
+    @include respond-to(mob){
+        width: 60%;
+        margin: 5% 0%;
+        padding: 2.5% 3.5%;
+    }
+    @include respond-to(medium-screens){
+        width: 60%;
+        margin: 2% 0%;
+        padding: 1% 2%;
+
+    }
+    @include respond-to(laptop-screens){
+
+    }
+    @include respond-to(wide-screens){
+
+    }
+}
